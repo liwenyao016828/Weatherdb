@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:background="#8000">
+    <!--标题-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="空气质量"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <!--主要内容-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
+
+        <!--    左边    -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+           <!--垂直方向线性布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+                <!--显示数字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/aqi_text"
+                    android:textColor="#fff"
+                    android:textSize="40sp"
+                    android:layout_gravity="center"/>
+                <!--显示文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AQI指数"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!--    右边    -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <!--垂直方向线性布局-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
+                <!--显示数字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pm25_text"
+                    android:textColor="#fff"
+                    android:textSize="40sp"
+                    android:layout_gravity="center"/>
+                <!--显示文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5指数"
+                    android:textColor="#fff"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

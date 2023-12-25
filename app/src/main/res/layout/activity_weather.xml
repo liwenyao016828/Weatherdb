@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_700">
+    <!--  在color.xml文件中自定义颜色 @color/teal_700  -->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bing_pic_img"
+        android:scaleType="centerCrop"/>
+        <!-- scaleType属性指定图片的显示方式  centerCrop：图片中心对齐，等比例放大或缩小 -->
+
+    <!--  滑动菜单  -->
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout">
+        <!--    第一个控件用于在主屏幕中显示的内容    -->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipe_refresh">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/weather_layout"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:fitsSystemWindows="true">
+
+                    <include layout="@layout/title"/>
+                    <include layout="@layout/now"/>
+                    <include layout="@layout/forecast"/>
+                    <include layout="@layout/aqi"/>
+                    <include layout="@layout/suggestion"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <!--    第二个控件用于滑动菜单中显示的内容    -->
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/choose_area_fragment"
+            android:name="com.example.myapplication.ChooseAreaFragment"
+            android:layout_gravity="start"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</FrameLayout>
